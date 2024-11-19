@@ -9,7 +9,7 @@ def on_received_string(receivedString):
             . . . . .
             . . . . .
             """)
-    elif niveauSignal < -73:
+    elif niveauSignal < -63:
         basic.show_leds("""
             . . . . .
             . # . # .
@@ -17,7 +17,15 @@ def on_received_string(receivedString):
             . # . # .
             . . . . .
             """)
-    elif niveauSignal < -63:
+    elif niveauSignal < -53:
+        basic.show_leds("""
+            # . . . #
+            . # . # .
+            . . # . .
+            . # . # .
+            # . . . #
+            """)
+    elif niveauSignal < -43:
         basic.show_leds("""
             # . . . #
             . # # # .
@@ -25,7 +33,7 @@ def on_received_string(receivedString):
             . # # # .
             # . . . #
             """)
-    elif niveauSignal < -43:
+    else:
         basic.show_leds("""
             # # # # #
             # # # # #
@@ -36,5 +44,5 @@ def on_received_string(receivedString):
 radio.on_received_string(on_received_string)
 
 niveauSignal = 0
-basic.show_icon(IconNames.UMBRELLA)
+basic.show_icon(IconNames.PITCHFORK)
 radio.set_group(1)
